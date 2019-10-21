@@ -1,4 +1,4 @@
-/*
+<!--
 	onMouse and onLoad Events. We've got to be able to draw in two different colors
 	with our mouse. Firstly we must build a canvas, which would actually be a table
 	with multiple small (100x100) cells. You program shall create this canvas once 
@@ -6,7 +6,7 @@
 	it passes by then, it'd color them in red if they are also holding the ctrl
 	key, or blue if they are holding the shift key. In any other case, it won't print 
 	anything.
-*/
+-->
 
 <!DOCTYPE html>
 <html>
@@ -14,18 +14,38 @@
 	<head>
 		<title>Unit 4. Worksheet #1. Exercise 4</title>
 		<script type = "text/javascript">
+			window.onload = function (){
+				var elements = document.getElementById('tabla').getElementsByTagName('td');
+				for (var i=0; i < elements.length; i++) {
+					elements[i].onmouseover = Cell;
+					elements[i].onmouseout = Cell;
+				}
+			}
+
+			function Cell(event) {
+				var event = event || window.event;
+				switch (event.type) {
+					case 'mouseout': break;
+
+					case 'mouseover':
+						this.style.backgroundColor = ((this.style.backgroundColor = "#ccffcc") ||
+							(this.style.backgroundColor == 'rgb(204, 255, 102')) ? '#FFFFFF' : '#FF00000';
+						break;
+				}
+			}
 
 			function drawTable() {
-				document.write("<table>");
+				document.write("<table border='2' id='tabla'>");
 				for (i=0; i<=30; i++) {
 					document.write("<tr>");
-					for (j=0; j<=30; j++) {
+					for (j=0; j<=70; j++) {
 						document.write("<td>+</td>");
 					}
 					document.write("</tr>");
 				}
 				document.write("</table>");
 			}
+			
 			drawTable();
 		</script>
 	</head>
