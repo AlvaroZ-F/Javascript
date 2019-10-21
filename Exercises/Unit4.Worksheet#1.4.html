@@ -1,0 +1,28 @@
+/*
+	onMouse and onLoad Events. We've got to be able to draw in two different colors
+	with our mouse. Firstly we must build a canvas, which would actually be a table
+	with multiple small (100x100) cells. You program shall create this canvas once 
+	it loads the page (onLoad). After that, it must detect the mouse movement so once 
+	it passes by then, it'd color them in red if they are also holding the ctrl
+	key, or blue if they are holding the shift key. In any other case, it won't print 
+	anything.
+*/
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Unit 4. Worksheet #1. Exercise 4</title>
+		<script type = "text/javascript">
+
+			function drawTable() {
+				document.write("<table>");
+				for (i=0; i<=30; i++) {
+					document.write("<tr>");
+					for (j=0; j<=30; j++) {
+						document.write("<td></td>");
+					}
+					document.write("</tr>");
+				}
+				document.write("</table>");
+			}
