@@ -1,0 +1,37 @@
+<html>
+	
+	<head>
+		<title>Unit 4. Worksheet #1. Exercise 9</title>		
+	</head>
+
+	<body onmousemove= "movingMouse(event)">
+		<img src="Screenshot_1.png" width="200" height="200" id="imageID" style="position:absolute; height 300px; width: 200px" onclick="clickOnImage(event)">
+
+		<script type="text/javascript">
+
+			var imagePulsada = false;
+			var offsetX, offsetY, x, y, imagen;
+
+			function clickOnImage(event) {
+				imagePulsada = !imagePulsada;
+				offsetX = x - event.target.hspace;
+				offsetY = y - event.target.vspace;
+				imagen = event.target;
+			}
+
+			function movingMouse(event) {
+				x = event.clientX;
+				y = event.clientY;
+				console.log(x+" "+y);
+
+				if (imagePulsada) {
+					imagen.vspace = y - offsetY;
+					imagen.hspace = x - offsetX;
+				}
+			}
+
+		</script>
+
+	</body>
+
+</html>
