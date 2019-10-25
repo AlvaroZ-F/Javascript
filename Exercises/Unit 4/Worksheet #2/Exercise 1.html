@@ -8,13 +8,40 @@
 
 	<body>
 
-		<p id="switchNor"> Normal Theme </p> <p id="switchMin"> Minimalist Theme </p>
+		<a href="" id="switchNor" onclick="clickSwitchNor()"> Normal Theme </a> <a href="" id="switchMin" onclick="clickSwitchMin()"> Minimalist Theme </a>
 
 		<p id="titleP"> <h1> Pagina de ejemplo </h1> </p>
 
 		<p id="text1"> In this page we'll check out how easy it is to apply or change styles through CSS to a selected document.<br>
 			The idea is once we'd select an style, it'd stay that way always for the user. We've not seen until now how to do this, how do you think this can be acchieved?<br> </p>
-			
+
+		<p id="hide">This is inside a frame </p>
+
+		<script>
+
+			/* If Normal Theme is clicked on, then it'd switch to a styled theme, else if Minimalist theme would be clicked on, then it'd return to the default style and it'd disable the stylesheet */
+
+			var linkNor = document.getElementById("switchNor");
+			var linkMin = document.getElementById("switchMin");
+
+			var titleP = document.getElementById("titleP");
+			var text1 = document.getElementById("text1");
+			var hide = document.getElementById("hide");
+
+			function clickSwitchNor() {
+				alert("You've clicked me");
+				document.body.style.background = "lightgreen";
+				event.preventDefault(); // Prevents the webpage to reload.
+			}
+
+			function clickSwitchMin() {
+				alert("You've clicked me");
+				event.preventDefault();
+			}
+
+
+		</script>
+
 
 	</body>
 
