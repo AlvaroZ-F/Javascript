@@ -11,7 +11,26 @@
 			The validation has also to be live, in other words, as soon the user leaves the field for the next one, it has to validate it even if it hasn't been submitted, informing the user if it's correct or not.
 		-->
 
-		
+		<form id="forme">
+			<fieldset>
+				<h2>Please fill up this register form and submit</h2>
+				Name: <input type="text" name="name"/> <br><br>
+				Surname: <input type="text" name="surname"/> <br><br>
+				DNI: <input type="text" name="dni"/> <br><br>
+				Phone number: <input type="text" name="phone"/> <br><br>
+				E-mail: <input type="text" name="email"/> <br><br>
+				Username: <input type="text" name="username"/> <br><br>
+				<input type="submit" name="submit" value="Submit"> <input type="button" name="reset" value="Reset" onclick="resetfunc()">
+			</fieldset>
+		</form>
+
+		<script>
+
+			function resetfunc() {
+				document.getElementById("forme").reset();
+			}
+
+		</script>
 	</body>
 
 </html>
