@@ -13,13 +13,36 @@
 
 		<script type="text/javascript">
 
+			function getCookie(username) {
+				var name = username + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				//Decode the cookie string so it can work with cookies with special characters.
+				var ca = decodedCookie.split(";");
+				// Split document.cookie on semicolons into an array called ca.
+
+				for (var i = 0; i < ca.length; i++) {
+					// Look through the ca array and read out each value into a new variable called "c".
+					var c = ca[i];
+					while (c.charAt[0] == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						// If the cookie is found, returns the value of the cookie.
+						return c.substring(name.length, c.length);
+					}
+				}
+				// If the cookie isn't found then it'd return "".
+				return "";
+			}
+
 			function checkCookie() {
 				var username = getCookie("username"); //Finds all cookies related to usernames.
 				if (username != "") {
-					alert ("Welcome "+ username);
+					alert ("Welcome again "+ username);
 				} else {
 					var usern = prompt("Please introduce your username. . .");
 					createCookie(username);
+					alert ("Cookie has been created successfully. Welcome back.")
 				}
 			}
 
@@ -32,6 +55,7 @@
 
 			function deleteCookie(username) {
 				document.cookie = "username="+username+"; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+				alert("The cookie has been deleted");
 			}
 
 			alert("Warning, this website uses COOKIES");
