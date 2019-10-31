@@ -11,6 +11,37 @@
 
 	<body>
 
+		<script type="text/javascript">
+
+			function checkCookie() {
+				var username = getCookie("username"); //Finds all cookies related to usernames.
+				if (username != "") {
+					alert ("Welcome "+ username);
+				} else {
+					var usern = prompt("Please introduce your username. . .");
+					createCookie(username);
+				}
+			}
+
+			function createCookie(username) {
+				var date = new Date();
+				date.setTime(date.getTime()+(5*60*1000));
+				var expires = "; expires"+date.toGMTString();
+				document.cookie = username+"="+username+";"+expires+";path=/";
+			}
+
+			function deleteCookie(username) {
+				document.cookie = "username="+username+"; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			}
+
+			alert("Warning, this website uses COOKIES");
+
+			checkCookie();
+
+		</script>
+
+		<button type="button" onclick="deleteCookie(username)">Delete Cookie</button>
+		
 	</body>
 
 </html>
