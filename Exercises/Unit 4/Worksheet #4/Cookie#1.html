@@ -9,7 +9,7 @@
 		<title>Cookies #1</title>
 	</head>
 
-	<body>
+	<body onload="checkCookie()">
 
 		<script type="text/javascript">
 
@@ -49,8 +49,8 @@
 			function createCookie(username) {
 				var date = new Date();
 				date.setTime(date.getTime()+(5*60*1000));
-				var expires = "; expires"+date.toGMTString();
-				document.cookie = username+"="+username+";"+expires+";path=/";
+				var expires = "expires="+date.toGMTString()+";";
+				document.cookie = "username="+username+";";
 			}
 
 			function deleteCookie(username) {
@@ -58,9 +58,9 @@
 				alert("The cookie has been deleted");
 			}
 
-			alert("Warning, this website uses COOKIES");
+			//alert("Warning, this website uses COOKIES");
 
-			checkCookie();
+			//checkCookie();
 
 		</script>
 
