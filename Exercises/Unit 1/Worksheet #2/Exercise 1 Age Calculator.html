@@ -17,7 +17,20 @@
 
 		<script type="text/javascript">
 
-			var datetime = new Date();
+			var today = new Date();
+			var agepro = prompt("Introduce your birth date YYYYMMDD");
+
+			var year = Number(agepro.substr(0,4));
+			var month = Number(agepro.substr(4,2));
+			var day = Number(agepro.substr(6,2));
+
+			var agetoday = today.getFullYear() - year;
+
+			if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+				agetoday--;
+			}
+
+			alert(agetoday+" or "+agetoday-1);
 
 		</script>
 

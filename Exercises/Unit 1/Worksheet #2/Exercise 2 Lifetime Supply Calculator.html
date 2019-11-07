@@ -1,0 +1,36 @@
+<DOCTYPE! html>
+<!--
+	The lifetime Supply Calculator.
+		- Store your current age into a variable.
+		- Store a maximum age into a variable.
+		- Store an estimated amount per day (as a number).
+		- Calculate how many would you eat in total for the rest of your life.
+		- Output the result to the screen like so: "You'll need NN to last you until the ripe old age of X".
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		<meta charset="utf-8">
+		<title> Exercise 2 Lifetime Supply Calculator</title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+
+			var age = prompt("Introduce your age");
+			var supplyday = 10;
+
+			function calculateSupply(age, estimate) {
+				var maxage = 80;
+				var result = (maxage - age)*estimate;
+				return result;
+			}
+
+			alert("your total lifetime supple is: "+calculateSupply(age,supplyday));
+
+		</script>
+
+	</body>
+
+</html>

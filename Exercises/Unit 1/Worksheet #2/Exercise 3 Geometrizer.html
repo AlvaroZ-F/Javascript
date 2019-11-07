@@ -1,0 +1,38 @@
+<DOCTYPE! html>
+<!--
+	The Geometrizer.
+		- Store a radius into a variable.
+		- Calculate the circumference based on the radius, and output "The circumference is NN".
+		- Calculate the area based on the radius, and output "The area is NN".
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Exercise 3 The Geometrizer</title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+
+			var radio = prompt("Introduce the radius of the circle");
+
+			function circumference(radio) {
+				var pi = Math.PI;
+				return 2*pi*radio;
+			}
+
+			function area(radio) {
+				var pi = Math.PI;
+				return pi*radio*radio;
+			}
+
+			document.write("<p>The circumference of given circle's radius is.... "+circumference(radio)+"</p>");
+			document.write("<p>The area of given circle's radius is...."+area(radio)+"</p>");
+
+		</script>
+
+	</body>
+
+</html>
