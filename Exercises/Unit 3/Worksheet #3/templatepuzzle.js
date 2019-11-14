@@ -62,3 +62,7 @@ class Puzzle {
 		}
 	}
 }
+
+function newGame() {
+	var newpuzzle = new Puzzle()
+}
