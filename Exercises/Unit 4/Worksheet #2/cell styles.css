@@ -1,62 +1,22 @@
-.tile1 {
+BODY {
+	background: #AAAAAA;
+}
+
+.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 {
+	display: table-cell;
 	width: 120px;
 	height: 120px;
+	border: 1px solid white;
 	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: left top;
+	cursor: pointer;
 }
 
-.tile2 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: center top;
-}
-
-.tile3 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: right top;
-}
-
-.tile4 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: left center;
-}
-
-.tile5 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: center center;
-}
-
-.tile6 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: right center;
-}
-
-.tile7 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: left bottom;
-}
-
-.tile8 {
-	width: 120px;
-	height: 120px;
-	background: url(https://i.imgur.com/R1F8Z9f.jpg);
-	background-position: center bottom;
-}
-
-.tile9 {
-	width: 120px;
-	height: 120px;
-	background: white;
-}
-
+.tile1 {background-position: left top;}
+.tile2 {background-position: center top;}
+.tile3 {background-position: right top;}
+.tile4 {background-position: left center;}
+.tile5 {background-position: center center;}
+.tile6 {background-position: right center;}
+.tile7 {background-position: left bottom;}
+.tile8 {background-position: center bottom;}
+.tile9 {background: white; cursor: default;}
