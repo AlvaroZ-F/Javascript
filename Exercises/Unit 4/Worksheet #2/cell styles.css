@@ -1,0 +1,62 @@
+.tile1 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: left top;
+}
+
+.tile2 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: center top;
+}
+
+.tile3 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: right top;
+}
+
+.tile4 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: left center;
+}
+
+.tile5 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: center center;
+}
+
+.tile6 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: right center;
+}
+
+.tile7 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: left bottom;
+}
+
+.tile8 {
+	width: 120px;
+	height: 120px;
+	background: url(https://i.imgur.com/R1F8Z9f.jpg);
+	background-position: center bottom;
+}
+
+.tile9 {
+	width: 120px;
+	height: 120px;
+	background: white;
+}
+
