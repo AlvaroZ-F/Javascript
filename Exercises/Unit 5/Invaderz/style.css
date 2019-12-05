@@ -1,4 +1,4 @@
-#background {
+#game {
 	background-image: url('BG.png');
 	height: 800px;
 	width: 1200px;
@@ -13,7 +13,7 @@
 	left: 550px;
 }
 
-.invader {
+#invader {
 	background-image: url("invader.png");
 	height: 50px;
 	width: 50px;

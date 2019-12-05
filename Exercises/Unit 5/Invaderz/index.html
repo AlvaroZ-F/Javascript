@@ -7,12 +7,40 @@
 
 	<body>
 		
-		<div id="background">
+		<div id="game">
 			<div id="gun"></div>
-			<div class="invader"></div>
+			<div id="invader"></div>
+			<div id="missiles"></div>
+			<div id="lasers"></div>
 		</div>
 
-		<script src="script.js"></script>
+		<script>
+
+			var gun = {
+				top: 700,
+				left: 500
+			};
+
+			document.onkeydown = function (e) {
+			console.log(e);
+			if (e.keyCode === 37) {
+				console.log("LEFT");
+				gun.left = gun.left-30;
+			}
+
+				if (e.keyCode === 39) {
+				console.log("RIGHT");
+					gun.left = gun.left+30
+				}
+			}
+
+			function drawGun() {
+				document.getElementById("gun").style.left = gun.left +"px";
+			}
+
+			drawGun();
+
+		</script>
 
 	</body>
 </html>
