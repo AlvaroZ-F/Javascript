@@ -41,11 +41,15 @@
 
 			var missiles = [];
 
+			var score = 0;
+
+			var lose = false;
+
 			document.onkeydown = function (e) {
 				console.log(e);
 				if (e.keyCode === 37) {
 					console.log("LEFT");
-					gun.left = gun.left-10;
+					gun.left -= 10;
 					drawGun();
 				} else if (e.keyCode === 39) {
 					console.log("RIGHT");
@@ -88,7 +92,7 @@
 			}
 
 			function moveInvaders() {
-				var invaderSpeed = 2;
+				var invaderSpeed = 1;
 				for (var invader = 0; invader < invaders.length; invader ++) {
 					invaders[invader].top = invaders[invader].top + invaderSpeed;
 				}
@@ -108,10 +112,12 @@
 							){
 						invaders.splice(invader, 1);
 						missiles.splice(missile, 1);
+						score += 10;
 						}
 					}
-					if ( invaders[invader].top >= 800 ) {
+					if ( invaders[invader].top > 750 ) {
 						invaders.splice(invader, 1);
+						score -= 100;
 					} 
 				}
 			}
