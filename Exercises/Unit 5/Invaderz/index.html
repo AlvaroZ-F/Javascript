@@ -18,27 +18,35 @@
 
 			var gun = {
 				top: 700,
-				left: 500
+				left: 550
 			};
 
-			document.onkeydown = function (e) {
-			console.log(e);
-			if (e.keyCode === 37) {
-				console.log("LEFT");
-				gun.left = gun.left-30;
-			}
+			var missiles = [];
 
-				if (e.keyCode === 39) {
-				console.log("RIGHT");
-					gun.left = gun.left+30
+			document.onkeydown = function (e) {
+				console.log(e);
+				if (e.keyCode === 37) {
+					console.log("LEFT");
+					gun.left = gun.left-10;
+					drawGun();
+				} else if (e.keyCode === 39) {
+					console.log("RIGHT");
+					gun.left = gun.left+10;
+					drawGun();
+				}
+
+				if (e.keyCode == 32) {
+					console.log("FIRE");
+					missiles.push({
+						left: gun.left + 15,
+						top: gun.top + 5
+					});
 				}
 			}
 
 			function drawGun() {
-				document.getElementById("gun").style.left = gun.left +"px";
+				document.getElementById("gun").style.left = gun.left + "px";
 			}
-
-			drawGun();
 
 		</script>
 
