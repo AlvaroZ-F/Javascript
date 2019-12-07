@@ -8,9 +8,15 @@
 	<body>
 		
 		<div id="game">
+			<div class="grid_score">
+				<div id="score"></div>
+				<div id="lives"></div>
+			</div>
+			<div id="lives"></div>
 			<div id="gun"></div>
 			<div id="invaders"></div>
 			<div id="missiles"></div>
+			<div id="lasers"></div>
 		</div>
 
 		<script>
@@ -41,9 +47,14 @@
 
 			var missiles = [];
 
+			var lasers = [];
+
 			var score = 0;
 
-			var lose = false;
+			var lives = 5;
+
+			var chance = 0;
+			var randomShot = 0;
 
 			document.onkeydown = function (e) {
 				console.log(e);
@@ -78,23 +89,42 @@
 				}
 			}
 
+			function moveMissiles() {
+				var missileSpeed = 15;
+				for (var missile = 0; missile < missiles.length; missile ++) {
+					missiles[missile].top -= missileSpeed;
+				}
+			}
+
 			function drawInvaders() {
 				document.getElementById("invaders").innerHTML= "";
 				for (var invader = 0; invader < invaders.length; invader++) {
 					document.getElementById("invaders").innerHTML += `<div class='invader' style='left:${invaders[invader].left}px; top:${invaders[invader].top}px;'></div>`;					
 				}
-			}
+			}			
 
-			function moveMissiles() {
-				for (var missile = 0; missile < missiles.length; missile ++) {
-					missiles[missile].top = missiles[missile].top - 5;
+			function moveInvaders() {
+				var invaderSpeed = 5;
+				for (var invader = 0; invader < invaders.length; invader ++) {
+					invaders[invader].top += invaderSpeed;
+					chance = Math.floor(Math.random() * 25);
+					if (chance == 12 || chance == 20) {
+						drawLasers();
+					}
 				}
 			}
 
-			function moveInvaders() {
-				var invaderSpeed = 1;
-				for (var invader = 0; invader < invaders.length; invader ++) {
-					invaders[invader].top = invaders[invader].top + invaderSpeed;
+			function drawLasers () {
+				document.getElementById("lasers").innerHTML= "";
+				for (var laser = 0; laser < lasers.length; laser++) {
+					document.getElementById("lasers").innerHTML += `<div class='laser' style='left:${lasers[laser].left}px; top:${lasers[laser].top}px;'></div>`;
+				}
+			}
+
+			function moveLasers () {
+				var laserSpeed = 25;
+				for (var laser = 0; laser < lasers.length; laser++) {
+					lasers[laser].top += laserSpeed;
 				}
 			}
 
@@ -109,26 +139,84 @@
 							(missiles[missile].left >= invaders[invader].left)
 							&&
 							(missiles[missile].left <= invaders[invader].left + 50)
-							){
-						invaders.splice(invader, 1);
-						missiles.splice(missile, 1);
-						score += 10;
+						){
+							invaders.splice(invader, 1);
+							missiles.splice(missile, 1);
+							score += 50;
 						}
 					}
-					if ( invaders[invader].top > 750 ) {
+					for (var laser = 0; laser < lasers.length; laser++) {
+						if (
+							(lasers[laser].top <= gun.top + 50)
+							&&
+							(lasers[laser].top > gun.top)
+							&&
+							(lasers[laser].left >= gun.left)
+							&&
+							(lasers[laser].left <= gun.left + 50)
+						){
+							lasers.splice(laser, 1);
+							lives -= 1;
+						}
+					}
+					if (invaders[invader].top > 800) {
 						invaders.splice(invader, 1);
 						score -= 100;
-					} 
+					}
+				}
+			}
+
+			function newWave() {
+				if (invaders.length == 0) {
+					invaders = [
+						{ left: 200, top: 100 },
+						{ left: 300, top: 100 },
+						{ left: 400, top: 100 },
+						{ left: 500, top: 100 },
+						{ left: 600, top: 100 },
+						{ left: 700, top: 100 },
+						{ left: 800, top: 100 },
+						{ left: 900, top: 100 },
+						{ left: 200, top: 175 },
+						{ left: 300, top: 175 },
+						{ left: 400, top: 175 },
+						{ left: 500, top: 175 },
+						{ left: 600, top: 175 },
+						{ left: 700, top: 175 },
+						{ left: 800, top: 175 },
+						{ left: 900, top: 175 }
+					];
+				}
+			}
+
+			function drawLives () {
+				document.getElementById("lives").innerHTML = "<b><center>LIVES: "+lives+"</center></b>";
+			}
+
+			function drawScore () {
+				document.getElementById("score").innerHTML = "<b><center>SCORE: "+score+"</center></b>";
+			}
+
+			function checkScore () {
+				if (score < 0) {
+					document.getElementById("game").innerHTML = "<h1> YOU LOSE </h1>";
+				} else if (lives <= 0) {
+					document.getElementById("game").innerHTML = "<h1> YOUR BATTLESHIP HAS BEEN DESTROYED </h1>";
 				}
 			}
 
 			function gameLoop () {
-				setTimeout(gameLoop, 100);
+				setTimeout(gameLoop, 400);
 				moveMissiles();
 				drawMissiles();
 				moveInvaders();
 				drawInvaders();
+				moveLasers();
+				drawLasers();
 				collisionDetection();
+				drawLives();
+				drawScore();
+				newWave();
 			}
 			gameLoop();
 
