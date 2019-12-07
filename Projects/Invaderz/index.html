@@ -104,11 +104,11 @@
 			}			
 
 			function moveInvaders() {
-				var invaderSpeed = 5;
+				var invaderSpeed = 3;
 				for (var invader = 0; invader < invaders.length; invader ++) {
 					invaders[invader].top += invaderSpeed;
-					chance = Math.floor(Math.random() * 25);
-					if (chance == 12 || chance == 20) {
+					chance = Math.floor(Math.random() * 10);
+					if (chance == 5) {
 						drawLasers();
 					}
 				}
@@ -206,7 +206,7 @@
 			}
 
 			function gameLoop () {
-				setTimeout(gameLoop, 400);
+				setTimeout(gameLoop, 300);
 				moveMissiles();
 				drawMissiles();
 				moveInvaders();
