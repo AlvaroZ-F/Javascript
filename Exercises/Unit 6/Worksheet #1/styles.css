@@ -1,19 +1,46 @@
-header {
-	background-color: lightblue;
-}
-
-main {
+body {
 	background-color: lightgray;
+	margin: 20px;
 }
 
-article {
-	background-color: lightblue;
-}
-
-ul {
+#header {
 	background-color: gray;
+	font-size: 40px;
+	font-family: Verdana;
 }
 
-ul li {
-	background-color: lightgray;
+#mailZone {
+	background-color: lightblue;
+}
+
+#mails {
+	border-width: 5px;
+	width: 80%;
+	border-collapse: collapse;
+}
+
+#headMail {
+	background-color: lightgreen;
+	font-family: Verdana;
+}
+
+.sender {
+	background-color: white;
+	padding: 10px;
+	width: 30%;
+	height: 30px;
+}
+
+.issue {
+	background-color: white;
+	padding: 10px;
+	width: 50%;
+	height: 30px;
+}
+
+.date {
+	background-color: white;
+	padding: 10px;
+	width: 20%;
+	height: 30px;
 }

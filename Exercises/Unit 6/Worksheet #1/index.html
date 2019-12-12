@@ -13,17 +13,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>https://www.javasmail.com/</title>
-		<style src="styles.css"></style>
+		<link rel="stylesheet" type="text/css" href="styles.css"></link>
+		<script src="script.js"></script>
 	</head>
 
 	<body>
 
-		<header>JAVASMAIL</header>
-		<main>
-			<article>
-				<ul id="mailList"></ul>
-			</article>
-		</main>
+		<button type="button" onclick="loadDoc()">Update list</button>
+		<div id="header">JAVASMAIL</div>
+		<div id="mailZone">
+			<table id="mails">
+				<tr id="headMail">
+					<td class="sender">SENDER</td>
+					<td class="issue">ISSUE</td>
+					<td class="date">DATE</td>
+				</tr>
+			</table>
+		</div>
 
 	</body>
 

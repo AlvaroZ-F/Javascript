@@ -1,5 +1,17 @@
+<main>
 <mail>
-	<to></to>
-	<from></from>
-	<body></body>
+	<sender>Alvaro</sender>
+	<issue>Can't figure out how this works</issue>
+	<date>2019-12-12</date>
 </mail>
+<mail>
+	<sender>Alvaro</sender>
+	<issue>Can't figure out how this works</issue>
+	<date>2019-12-12</date>
+</mail>
+<mail>
+	<sender>Jose</sender>
+	<issue>Can't figure out how this works</issue>
+	<date>2019-12-12</date>
+</mail>
+</main>
