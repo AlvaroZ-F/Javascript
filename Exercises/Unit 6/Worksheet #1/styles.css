@@ -1,0 +1,19 @@
+header {
+	background-color: lightblue;
+}
+
+main {
+	background-color: lightgray;
+}
+
+article {
+	background-color: lightblue;
+}
+
+ul {
+	background-color: gray;
+}
+
+ul li {
+	background-color: lightgray;
+}
