@@ -1,0 +1,48 @@
+body {
+	margin: 40px;
+}
+
+#notesContainer {
+	margin-top: 40px;
+}
+
+span {
+	margin-left: 10px;
+	color: #444;
+}
+
+.sticky-note {
+	height: 200px;
+	width: 200px;
+	color: #7f6c04;
+	background: #f9dd45;
+	border-radius: 10px;
+	border: 0px;
+	font-family: Verdana;
+	font-size: 13px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.contents {
+	background: #f9e055;
+	margin: 25px;
+	outline: none;
+}
+
+.handle {
+	cursor: move;
+	background: #7f6c04;
+	border-radius: 8px 8px 0px 0px;
+}
+
+.handle .close {
+	cursor: pointer;
+}
+
+html body .sticky-note div.close {
+	color: #3d3402;
+	opacity: 1;
+	text-shadow: 1px 0px 1px #a08805;
+	padding: 2px;
+}
