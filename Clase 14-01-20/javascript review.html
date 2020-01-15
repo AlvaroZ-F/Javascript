@@ -1,0 +1,104 @@
+<DOCTYPE! html>
+<!--
+	JavaScript Review
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			var porDos = (i) => i * 2;
+			var porTres = (i) => { return i * 3;}
+
+			console.log(porDos(4));
+			console.log(porTres(4));
+
+			function ejercicio4(fila, col, color1, color2) {
+				document.write("<table>");
+				for (let i = 0; i <= fila; i++) {
+					if (i % 2 == 0) {
+						document.write("<tr bgcolor='"+color1+"'>");
+					} else {
+						document.write("<tr bgcolor='"+color2+"'>");
+					}
+					for (let j = 0; j <= col; j++) {
+						document.write("<td> ===0=== </td>");
+					}
+					document.write("</tr>");
+				}
+			}
+
+			var ejercicio4v2 = (fila, columna, color1, color2) => {
+				var result = '<table>';
+
+				for(let i =0; i <= fila; i++){
+
+					if (i % 2 == 0) 
+						result += "<tr bgcolor='" + color1 + "'>";
+					else 
+						result += "<tr bgcolor='" + color2 + "'>";
+
+					for(let j =0; j <= columna; j++)
+						result += '<td>' + i + '' + j + '</td>';
+					
+					result += "</tr>";
+				}
+
+				return result += '</table>';
+			}
+
+
+			function sleep(milliseconds) {
+			  const date = Date.now();
+			  let currentDate = null;
+			  do {
+			    currentDate = Date.now();
+			  } while (currentDate - date < milliseconds);
+			}
+
+			var pinta = (number, id) => {
+				document.getElementById(id).textContent = number;
+			}
+
+			var contar = (id) => {
+				for (let i = 9; i >= 0; i--) {
+					pinta(i, id);
+					//console.log()
+					sleep(1000);
+				}
+
+			}
+
+			var ejercicio10 = (fila, columna) => {
+				var result = '<table>';
+
+				for(let i =0; i <= fila; i++){
+
+					result += '<tr>';
+
+					for(let j =0; j <= columna; j++)
+						result += '<td id="'+i+j+'" width="25" height="25" onClick="contar(\''+i+j+'\')">a</td>';
+					
+					result += "</tr>";
+				}
+
+				return result += '</table>';
+			}
+
+			ejercicio4(3,3,"red","blue");
+
+
+			document.write(ejercicio4v2(5,5,"red","green"));
+
+			document.write(ejercicio10(5,5,"red","green"));
+
+		</script>
+
+	</body>
+
+</html>
