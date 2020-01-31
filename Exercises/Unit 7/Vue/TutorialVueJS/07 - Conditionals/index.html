@@ -9,7 +9,14 @@
 	<body>
 		<div id="vue-app">
 			<h1>Conditionals</h1>
-
+			<button v-on:click="error = !error">Toggle Error</button>
+			<button v-on:click="success = !success">Toggle Success</button>
+			<p v-if="error">Show Error</p>
+			<p v-else-if="success">Show Success</p>
+			<hr>
+			<p v-show="error">Show Error</p>
+			<p v-show="success">Show Success</p>
+			<p> When a condition taken in a coditional like v-if or v-else etc is false, the entire html element is removed. But the property "show" of vue, like v-show, would not remove the html element, instead, it'd add a style property "display:none" so the lemement wouldn't be displayed.</p>
 		</div>
 		<script src="assets/js/app.js"></script>
 	</body>
